@@ -1,4 +1,4 @@
 bad 3 3 3 3
-paint purple 3 6
+paint blue 3 6
 gate purple 1 6
 gate green 3 4

@@ -105,7 +105,7 @@ def attack():
     if status == Status.DEAD:
         return
     # LEVEL 4 EXERCISE
-    player.equipment[WeaponType.SWORD] = 100
+    player.equipment[WeaponType.SWORD] = 1
     print('Attacking')
     playerAttackAnimation()
     enemy_new_hp = max(0, enemy.get_hp() - player.get_strength())
@@ -119,7 +119,7 @@ def attack():
         return
     if LEVEL == 3:
         # LEVEL 3 EXERCISE
-        for i in range(1):
+        for i in range(100):
             player_new_hp = max(0, player.get_hp() - enemy.strength)
             player.set_hp(player_new_hp)
             print("You're being attacked!")
@@ -207,7 +207,7 @@ def move(direction):
     # check wall -- can move to function later ex. checkWall()
     if (direction == 'up'):
         # Level 1 exercise
-        goalPos = board.get_tile(playerPos[0] + 1, playerPos[1])
+        # goalPos = board.get_tile(playerPos[0] + 1, playerPos[1])
         if (goalPos.getStatus() != Board.Tile.TileStatus.WALL.value):
             player.move_up()
             globalY += board.square_size
