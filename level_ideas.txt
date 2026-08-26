@@ -1,0 +1,19 @@
+level 1: enable moving up, needed to get to goal state
+level 2: purple gate, given blue paint --> edit blue to purple
+    or tile that changes player color
+level 3: enemy has 1 strength but attacks 100 times (tests loop knowledge)
+level 4 BOSS: toggle strength to defeat very high hp enemy
+level 5 EASTER EGG: edit map to get a visible item by toggling wall to no-wall
+^^ getting the egg allows access to level 6 (top secret level)
+
+combine the two below
+level 6 (puzzle): paints, keys, gates, locks
+
+level 7 (fun): skill check, all enemies on screen attack every 2s, player must move around & defeat all before too late
+    track score
+level 8 (endless) !?: self-explanatory, gets harder over time
+
+
+other ideas
+add fighting indicator for a frame or two
+puzzles mode!

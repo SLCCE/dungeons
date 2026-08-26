@@ -1,0 +1,4 @@
+good: stores good guy starting coordinates
+equipment/inventory: only appear when we want to give the user new items
+entity: bad guys
+
