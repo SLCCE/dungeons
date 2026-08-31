@@ -1,0 +1,2 @@
+UI -- white-out squares
+HP Bar (text for now), Level #
