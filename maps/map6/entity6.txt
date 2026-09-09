@@ -1,1 +1,30 @@
 egg 0 8
+bad 3 3 2 11 
+bad 3 3 2 12
+bad 3 3 2 13
+bad 3 3 5 15
+bad 3 3 5 19
+bad 3 3 10 17
+bad 3 3 6 5
+bad 3 3 6 1
+bad 3 3 5 3
+bad 3 3 7 2
+bad 3 3 7 4
+bad 3 3 9 3
+bad 3 3 10 1
+bad 3 3 10 5
+bad 3 3 11 2
+bad 3 3 11 4
+bad 3 3 12 3
+bad 3 3 13 3
+paint blue 4 7
+paint green 12 18
+paint yellow 2 17
+paint red 13 1
+gate blue 5 9
+gate red 6 8
+gate yellow 8 8
+gate red 11 8
+gate blue 13 9
+gate green 7 17
+gate yellow 3 16
