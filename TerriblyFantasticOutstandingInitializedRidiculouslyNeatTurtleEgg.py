@@ -10,6 +10,8 @@ from enum import Enum
 from board import Tile
 from items.Equipment import WeaponType
 
+from tkinter import messagebox
+
 # OTHER EXERCISES
 # EXERCISE 2: map2/entity2.txt
 # EXERCISE 5: map5/map5.txt
@@ -24,6 +26,10 @@ animationTurtle.hideturtle()
 turtle.mode("world")
 globalX = 0
 globalY = 0
+
+# Escape codes for printing to the terminal
+TEXT_RED = "\033[0;31m"
+TEXT_DEFAULT = "\033[0m"
 
 class Status(Enum):
     ERROR = -1
@@ -173,9 +179,6 @@ def playerAttackAnimation():
     animationTurtle.clear()
     # Display the cleared hit marker
     screen.update()
-        
-
-
 
 def checkGate(direction):
     destinationRow, destinationCol = -1, -1
@@ -205,39 +208,46 @@ def move(direction):
         print("Need to be same color as gate to move through")
         return
     # check wall -- can move to function later ex. checkWall()
-    if (direction == 'up'):
-        # Level 1 exercise
-        goalPos = board.get_tile(playerPos[0] + 1, playerPos[1])
-        if (goalPos.getStatus() != Board.Tile.TileStatus.WALL.value):
-            player.move_up()
-            globalY += board.square_size
-            print(f'Moving {direction} to {player.get_position()}')
-        else:
-            print(f'Goal Position is of type: {goalPos.getStatus()}')
-    elif (direction == 'down'):
-        goalPos = board.get_tile(playerPos[0] - 1, playerPos[1])
-        if (goalPos.getStatus() != Board.Tile.TileStatus.WALL.value):
-            player.move_down()
-            globalY -= board.square_size
-            print(f'Moving {direction} to {player.get_position()}')
-        else:
-            print(f'Goal Position is of type: {goalPos.getStatus()}')
-    elif (direction == 'right'):
-        goalPos = board.get_tile(playerPos[0], playerPos[1] + 1)
-        if (goalPos.getStatus() != Board.Tile.TileStatus.WALL.value):
-            player.move_right()
-            globalX += board.square_size
-            print(f'Moving {direction} to {player.get_position()}')
-        else:
-            print(f'Goal Position is of type: {goalPos.getStatus()}')
-    elif (direction == 'left'):
-        goalPos = board.get_tile(playerPos[0], playerPos[1] - 1)
-        if (goalPos.getStatus() != Board.Tile.TileStatus.WALL.value):
-            player.move_left()
-            globalX -= board.square_size
-            print(f'Moving {direction} to {player.get_position()}')
-        else:
-            print(f'Goal Position is of type: {goalPos.getStatus()}')
+    try:
+        if (direction == 'up'):
+            # Level 1 exercise
+            goalPos = board.get_tile(playerPos[0] + 1, playerPos[1])
+            if (goalPos.getStatus() != Board.Tile.TileStatus.WALL.value):
+                player.move_up()
+                globalY += board.square_size
+                print(f'Moving {direction} to {player.get_position()}')
+            else:
+                print(f'Goal Position is of type: {goalPos.getStatus()}')
+        elif (direction == 'down'):
+            goalPos = board.get_tile(playerPos[0] - 1, playerPos[1])
+            if (goalPos.getStatus() != Board.Tile.TileStatus.WALL.value):
+                player.move_down()
+                globalY -= board.square_size
+                print(f'Moving {direction} to {player.get_position()}')
+            else:
+                print(f'Goal Position is of type: {goalPos.getStatus()}')
+        elif (direction == 'right'):
+            goalPos = board.get_tile(playerPos[0], playerPos[1] + 1)
+            if (goalPos.getStatus() != Board.Tile.TileStatus.WALL.value):
+                player.move_right()
+                globalX += board.square_size
+                print(f'Moving {direction} to {player.get_position()}')
+            else:
+                print(f'Goal Position is of type: {goalPos.getStatus()}')
+        elif (direction == 'left'):
+            goalPos = board.get_tile(playerPos[0], playerPos[1] - 1)
+            if (goalPos.getStatus() != Board.Tile.TileStatus.WALL.value):
+                player.move_left()
+                globalX -= board.square_size
+                print(f'Moving {direction} to {player.get_position()}')
+            else:
+                print(f'Goal Position is of type: {goalPos.getStatus()}')
+    except UnboundLocalError:
+        print(f"{TEXT_RED}You encountered an error when moving!\n\nFunction: move(){TEXT_DEFAULT}")
+        messagebox.showwarning(
+            title = "Dungeons",
+            message = "You encountered an error when moving!\n\nCheck the terminal for details."
+        )
 
     screen.setworldcoordinates(-300 + globalX, -300 + globalY, 300 + globalX, 300 + globalY)
     player._draw_self()
