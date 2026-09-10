@@ -19,12 +19,12 @@ bad 3 3 12 3
 bad 3 3 13 3
 paint blue 4 7
 paint green 12 18
-paint yellow 2 17
+paint purple 2 17
 paint red 13 1
 gate blue 5 9
 gate red 6 8
-gate yellow 8 8
+gate purple 8 8
 gate red 11 8
 gate blue 13 9
 gate green 7 17
-gate yellow 3 16
+gate purple 3 16
