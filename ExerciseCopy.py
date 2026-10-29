@@ -1,3 +1,6 @@
+'''
+OLD COPY, FORK FROM NEW WHEN READY!
+'''
 import turtle
 
 from board import Board
